@@ -21,9 +21,9 @@ class FreeToGameApi {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
 
-            if let str = String(data: data, encoding: .utf8) {
+            /*if let str = String(data: data, encoding: .utf8) {
                 print("Successfully decoded: \(str)")
-            }
+            }*/
             
             return try JSONDecoder().decode([Game].self, from: data)
         } catch {
